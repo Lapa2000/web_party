@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New LigneFactureFournisseurNewData{% endblock %}
+
+{% block body %}
+    <h1>Créer nouveau LigneFactureFournisseurNewData</h1>
+
+    {{ include('ligne_facture_fournisseur_new_data/_form.html.twig') }}
+
+    <a href="{{ path('app_ligne_facture_fournisseur_new_data_index') }}"class="btn btn-primary">Retour à la liste</a>
+{% endblock %}

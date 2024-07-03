@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LigneFacturesClients index{% endblock %}
+
+{% block body %}
+    <h1>LigneFacturesClients Liste :: </h1>
+    <a href="{{ path('app_ligne_factures_clients_new') }}"><p class="btn btn-primary btn-lg">Creér Nouveau : </p> </a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Code</th>
+                <th>Codedevis</th>
+                <th>Reference</th>
+                <th>Produit</th>
+                <th>Quantite</th>
+                <th>Prixdeventeht</th>
+                <th>Remise</th>
+                <th>Tva</th>
+                <th>Soustotalht</th>
+                <th>Soustotalttc</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for ligne_factures_client in ligne_factures_clients %}
+            <tr>
+                <td>{{ ligne_factures_client.id }}</td>
+                <td>{{ ligne_factures_client.code }}</td>
+                <td>{{ ligne_factures_client.codedevis }}</td>
+                <td>{{ ligne_factures_client.reference }}</td>
+                <td>{{ ligne_factures_client.produit }}</td>
+                <td>{{ ligne_factures_client.quantite }}</td>
+                <td>{{ ligne_factures_client.prixdeventeht }}</td>
+                <td>{{ ligne_factures_client.remise }}</td>
+                <td>{{ ligne_factures_client.tva }}</td>
+                <td>{{ ligne_factures_client.soustotalht }}</td>
+                <td>{{ ligne_factures_client.soustotalttc }}</td>
+                <td>
+                    <a href="{{ path('app_ligne_factures_clients_show', {'id': ligne_factures_client.id}) }}"><p class="btn btn-info btn-lg">Détails </p></a>
+                    <a href="{{ path('app_ligne_factures_clients_edit', {'id': ligne_factures_client.id}) }}"><p class="btn btn-warning btn-lg">Modifier </p></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="12">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_ligne_factures_clients_new') }}"><p class="btn btn-primary btn-lg">Creér Nouveau : </p> </a>
+{% endblock %}

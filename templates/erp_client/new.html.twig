@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ErpClient{% endblock %}
+
+{% block body %}
+
+
+<section class="content">
+
+<div class="container-fluid">
+
+
+
+
+
+
+
+
+
+    <h1>Créer nouveau ErpClient</h1>
+
+    {{ include('erp_client/_form.html.twig') }}
+
+    <a href="{{ path('app_erp_client_index') }}"class="btn btn-primary">Retour à la liste</a>
+
+
+
+
+
+
+
+
+
+
+
+</section>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

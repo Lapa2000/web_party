@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit ErpHeureSupp{% endblock %}
+
+{% block body %}
+    <h1>Modifier ErpHeureSupp</h1>
+
+    {{ include('erp_heure_supp/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_erp_heure_supp_index') }}"class="btn btn-primary">Retour à la liste</a>
+
+    {{ include('erp_heure_supp/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ErpEmploye{% endblock %}
+
+{% block body %}
+    <h1>Créer nouveau ErpEmploye</h1>
+
+    {{ include('erp_employe/_form.html.twig') }}
+
+    <a href="{{ path('app_erp_employe_index') }}"class="btn btn-primary">Retour à la liste</a>
+{% endblock %}

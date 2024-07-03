@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Devis{% endblock %}
+
+{% block body %}
+
+
+
+<section class="content">
+
+<div class="container-fluid">
+
+
+
+
+
+
+
+
+
+
+    <h1>Modifier Devis</h1>
+
+    {{ include('devis/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_devis_index') }}"class="btn btn-primary">Retour à la liste</a>
+
+    {{ include('devis/_delete_form.html.twig') }}
+
+
+
+
+
+
+
+
+
+
+
+</section>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,111 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AvoirClients index{% endblock %}
+
+{% block body %}
+
+
+
+
+
+
+
+<section class="content">
+
+<div class="container-fluid">
+
+
+
+
+
+
+
+
+
+
+
+
+    <h1>AvoirClients Liste :: </h1>
+    <a href="{{ path('app_avoir_clients_new') }}"><p class="btn btn-primary btn-lg">Creér Nouveau : </p> </a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Code</th>
+                <th>Modepaimement</th>
+                <th>Numerocompte</th>
+                <th>Codeclient</th>
+                <th>Codefacture</th>
+                <th>Montanttotalfacture</th>
+                <th>Montantsaisie</th>
+                <th>Montantrestant</th>
+                <th>Datemontant</th>
+                <th>Creepar</th>
+                <th>Datecreation</th>
+                <th>Datemodification</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for avoir_client in avoir_clients %}
+            <tr>
+                <td>{{ avoir_client.id }}</td>
+                <td>{{ avoir_client.code }}</td>
+                <td>{{ avoir_client.modepaimement }}</td>
+                <td>{{ avoir_client.numerocompte }}</td>
+                <td>{{ avoir_client.codeclient }}</td>
+                <td>{{ avoir_client.codefacture }}</td>
+                <td>{{ avoir_client.montanttotalfacture }}</td>
+                <td>{{ avoir_client.montantsaisie }}</td>
+                <td>{{ avoir_client.montantrestant }}</td>
+                <td>{{ avoir_client.datemontant }}</td>
+                <td>{{ avoir_client.creepar }}</td>
+                <td>{{ avoir_client.datecreation ? avoir_client.datecreation|date('Y-m-d') : '' }}</td>
+                <td>{{ avoir_client.datemodification ? avoir_client.datemodification|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_avoir_clients_show', {'id': avoir_client.id}) }}"><p class="btn btn-info btn-lg">Détails </p></a>
+                    <a href="{{ path('app_avoir_clients_edit', {'id': avoir_client.id}) }}"><p class="btn btn-warning btn-lg">Modifier </p></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="14">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_avoir_clients_new') }}"><p class="btn btn-primary btn-lg">Creér Nouveau : </p> </a>
+
+
+
+
+
+
+
+
+
+
+
+</section>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+

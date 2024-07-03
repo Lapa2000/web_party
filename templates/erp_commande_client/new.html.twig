@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ErpCommandeClient{% endblock %}
+
+{% block body %}
+
+
+<section class="content">
+
+<div class="container-fluid">
+
+
+
+
+
+
+
+
+
+    <h1>Créer nouveau ErpCommandeClient</h1>
+
+    {{ include('erp_commande_client/_form.html.twig') }}
+
+    <a href="{{ path('app_erp_commande_client_index') }}"class="btn btn-primary">Retour à la liste</a>
+
+
+
+
+
+
+
+
+
+
+
+</section>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

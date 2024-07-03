@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ErpVille index{% endblock %}
+
+{% block body %}
+    <h1>ErpVille Liste :: </h1>
+    <a href="{{ path('app_erp_ville_new') }}"><p class="btn btn-primary btn-lg">Creér Nouveau : </p> </a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Code</th>
+                <th>Nom</th>
+                <th>Creepar</th>
+                <th>Datecreation</th>
+                <th>Datemodification</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for erp_ville in erp_villes %}
+            <tr>
+                <td>{{ erp_ville.id }}</td>
+                <td>{{ erp_ville.code }}</td>
+                <td>{{ erp_ville.nom }}</td>
+                <td>{{ erp_ville.creepar }}</td>
+                <td>{{ erp_ville.datecreation ? erp_ville.datecreation|date('Y-m-d') : '' }}</td>
+                <td>{{ erp_ville.datemodification ? erp_ville.datemodification|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_erp_ville_show', {'id': erp_ville.id}) }}"><p class="btn btn-info btn-lg">Détails </p></a>
+                    <a href="{{ path('app_erp_ville_edit', {'id': erp_ville.id}) }}"><p class="btn btn-warning btn-lg">Modifier </p></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_erp_ville_new') }}"><p class="btn btn-primary btn-lg">Creér Nouveau : </p> </a>
+{% endblock %}

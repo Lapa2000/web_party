@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Operation index{% endblock %}
+
+{% block body %}
+    <h1>Operation Liste :: </h1>
+    <a href="{{ path('app_operation_new') }}"><p class="btn btn-primary btn-lg">Creér Nouveau : </p> </a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Codeoperation</th>
+                <th>Nom</th>
+                <th>Tempsexecution</th>
+                <th>Gamme</th>
+                <th>Creepar</th>
+                <th>Datecreation</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for operation in operations %}
+            <tr>
+                <td>{{ operation.id }}</td>
+                <td>{{ operation.codeoperation }}</td>
+                <td>{{ operation.nom }}</td>
+                <td>{{ operation.tempsexecution }}</td>
+                <td>{{ operation.gamme }}</td>
+                <td>{{ operation.creepar }}</td>
+                <td>{{ operation.datecreation ? operation.datecreation|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_operation_show', {'id': operation.id}) }}"><p class="btn btn-info btn-lg">Détails </p></a>
+                    <a href="{{ path('app_operation_edit', {'id': operation.id}) }}"><p class="btn btn-warning btn-lg">Modifier </p></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_operation_new') }}"><p class="btn btn-primary btn-lg">Creér Nouveau : </p> </a>
+{% endblock %}

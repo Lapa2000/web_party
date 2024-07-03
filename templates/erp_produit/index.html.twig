@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ErpProduit index{% endblock %}
+
+{% block body %}
+
+
+
+
+
+<section class="content">
+
+<div class="container-fluid">
+
+
+
+
+
+
+
+
+
+
+    <h1>ErpProduit Liste :: </h1>
+    <a href="{{ path('app_erp_produit_new') }}"><p class="btn btn-primary btn-lg">Creér Nouveau : </p> </a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Code</th>
+                <th>Codeproduit</th>
+                <th>Nom</th>
+                <th>Categorie</th>
+                <th>Methodeapprovisionement</th>
+                <th>Puvht</th>
+                <th>Tva</th>
+                <th>Puvttc</th>
+                <th>Remise</th>
+                <th>Unitestock</th>
+                <th>Fournisseur</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for erp_produit in erp_produits %}
+            <tr>
+                <td>{{ erp_produit.id }}</td>
+                <td>{{ erp_produit.code }}</td>
+                <td>{{ erp_produit.codeproduit }}</td>
+                <td>{{ erp_produit.nom }}</td>
+                <td>{{ erp_produit.categorie }}</td>
+                <td>{{ erp_produit.methodeapprovisionement }}</td>
+                <td>{{ erp_produit.puvht }}</td>
+                <td>{{ erp_produit.tva }}</td>
+                <td>{{ erp_produit.puvttc }}</td>
+                <td>{{ erp_produit.remise }}</td>
+                <td>{{ erp_produit.unitestock }}</td>
+                <td>{{ erp_produit.fournisseur }}</td>
+                <td>
+                    <a href="{{ path('app_erp_produit_show', {'id': erp_produit.id}) }}"><p class="btn btn-info btn-lg">Détails </p></a>
+                    <a href="{{ path('app_erp_produit_edit', {'id': erp_produit.id}) }}"><p class="btn btn-warning btn-lg">Modifier </p></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="20">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_erp_produit_new') }}"><p class="btn btn-primary btn-lg">Creér Nouveau : </p> </a>
+
+
+
+
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+{% endblock %}

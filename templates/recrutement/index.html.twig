@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recrutement index{% endblock %}
+
+{% block body %}
+    <h1>Recrutement Liste :: </h1>
+    <a href="{{ path('app_recrutement_new') }}"><p class="btn btn-primary btn-lg">Creér Nouveau : </p> </a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Idemp</th>
+                <th>Datedebut</th>
+                <th>Creepar</th>
+                <th>Datecreation</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for recrutement in recrutements %}
+            <tr>
+                <td>{{ recrutement.id }}</td>
+                <td>{{ recrutement.titre }}</td>
+                <td>{{ recrutement.idemp }}</td>
+                <td>{{ recrutement.datedebut ? recrutement.datedebut|date('Y-m-d') : '' }}</td>
+                <td>{{ recrutement.creepar }}</td>
+                <td>{{ recrutement.datecreation ? recrutement.datecreation|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_recrutement_show', {'id': recrutement.id}) }}"><p class="btn btn-info btn-lg">Détails </p></a>
+                    <a href="{{ path('app_recrutement_edit', {'id': recrutement.id}) }}"><p class="btn btn-warning btn-lg">Modifier </p></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_recrutement_new') }}"><p class="btn btn-primary btn-lg">Creér Nouveau : </p> </a>
+{% endblock %}

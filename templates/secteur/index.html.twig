@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Secteur index{% endblock %}
+
+{% block body %}
+    <h1>Secteur Liste :: </h1>
+    <a href="{{ path('app_secteur_new') }}"><p class="btn btn-primary btn-lg">Creér Nouveau : </p> </a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Code</th>
+                <th>Nom</th>
+                <th>Creepar</th>
+                <th>Datecreation</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for secteur in secteurs %}
+            <tr>
+                <td>{{ secteur.id }}</td>
+                <td>{{ secteur.code }}</td>
+                <td>{{ secteur.nom }}</td>
+                <td>{{ secteur.creepar }}</td>
+                <td>{{ secteur.datecreation ? secteur.datecreation|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_secteur_show', {'id': secteur.id}) }}"><p class="btn btn-info btn-lg">Détails </p></a>
+                    <a href="{{ path('app_secteur_edit', {'id': secteur.id}) }}"><p class="btn btn-warning btn-lg">Modifier </p></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_secteur_new') }}"><p class="btn btn-primary btn-lg">Creér Nouveau : </p> </a>
+{% endblock %}

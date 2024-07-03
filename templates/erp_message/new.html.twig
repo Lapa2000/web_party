@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ErpMessage{% endblock %}
+
+{% block body %}
+    <h1>Créer nouveau ErpMessage</h1>
+
+    {{ include('erp_message/_form.html.twig') }}
+
+    <a href="{{ path('app_erp_message_index') }}"class="btn btn-primary">Retour à la liste</a>
+{% endblock %}

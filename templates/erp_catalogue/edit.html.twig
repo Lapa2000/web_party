@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit ErpCatalogue{% endblock %}
+
+{% block body %}
+
+
+<section class="content">
+
+<div class="container-fluid">
+
+
+
+
+
+
+
+
+
+    <h1>Modifier ErpCatalogue</h1>
+
+    {{ include('erp_catalogue/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_erp_catalogue_index') }}"class="btn btn-primary">Retour à la liste</a>
+
+    {{ include('erp_catalogue/_delete_form.html.twig') }}
+
+
+
+
+
+
+
+
+
+
+
+</section>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

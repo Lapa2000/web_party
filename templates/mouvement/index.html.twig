@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mouvement index{% endblock %}
+
+{% block body %}
+    <h1>Mouvement Liste :: </h1>
+    <a href="{{ path('app_mouvement_new') }}"><p class="btn btn-primary btn-lg">Creér Nouveau : </p> </a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Code</th>
+                <th>Codeproduit</th>
+                <th>Operation</th>
+                <th>Ancienvaleur</th>
+                <th>Nouvellevaleur</th>
+                <th>Creepar</th>
+                <th>Datecreation</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for mouvement in mouvements %}
+            <tr>
+                <td>{{ mouvement.id }}</td>
+                <td>{{ mouvement.code }}</td>
+                <td>{{ mouvement.codeproduit }}</td>
+                <td>{{ mouvement.operation }}</td>
+                <td>{{ mouvement.ancienvaleur }}</td>
+                <td>{{ mouvement.nouvellevaleur }}</td>
+                <td>{{ mouvement.creepar }}</td>
+                <td>{{ mouvement.datecreation }}</td>
+                <td>
+                    <a href="{{ path('app_mouvement_show', {'id': mouvement.id}) }}"><p class="btn btn-info btn-lg">Détails </p></a>
+                    <a href="{{ path('app_mouvement_edit', {'id': mouvement.id}) }}"><p class="btn btn-warning btn-lg">Modifier </p></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_mouvement_new') }}"><p class="btn btn-primary btn-lg">Creér Nouveau : </p> </a>
+{% endblock %}

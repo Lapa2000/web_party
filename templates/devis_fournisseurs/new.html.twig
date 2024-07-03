@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New DevisFournisseurs{% endblock %}
+
+{% block body %}
+
+
+<section class="content">
+
+<div class="container-fluid">
+
+
+
+
+
+
+
+
+
+    <h1>Créer nouveau DevisFournisseurs</h1>
+
+    {{ include('devis_fournisseurs/_form.html.twig') }}
+
+    <a href="{{ path('app_devis_fournisseurs_index') }}"class="btn btn-primary">Retour à la liste</a>
+
+
+
+
+
+
+
+
+
+
+
+</section>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

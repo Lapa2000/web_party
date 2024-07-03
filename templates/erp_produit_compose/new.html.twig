@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ErpProduitCompose{% endblock %}
+
+{% block body %}
+    <h1>Créer nouveau ErpProduitCompose</h1>
+
+    {{ include('erp_produit_compose/_form.html.twig') }}
+
+    <a href="{{ path('app_erp_produit_compose_index') }}"class="btn btn-primary">Retour à la liste</a>
+{% endblock %}

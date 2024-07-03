@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit ErpContact{% endblock %}
+
+{% block body %}
+
+
+<section class="content">
+
+<div class="container-fluid">
+
+
+
+
+
+
+
+
+
+    <h1>Modifier ErpContact</h1>
+
+    {{ include('erp_contact/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_erp_contact_index') }}"class="btn btn-primary">Retour à la liste</a>
+
+    {{ include('erp_contact/_delete_form.html.twig') }}
+
+
+
+
+
+
+
+
+
+
+
+</section>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,146 @@
+
+
+
+
+
+
+
+
+
+{% extends 'base.html.twig' %}
+
+
+
+{% block title %}New Conge{% endblock %}
+
+{% block body %}
+
+
+
+
+<!-- Main Content -->
+
+<section class="content">
+    <div class="">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2>Dashboard</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Aero</a></li>
+                        <li class="breadcrumb-item active">Dashboard 1</li>
+                    </ul>
+                    <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">                
+                    <button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button"><i class="zmdi zmdi-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+
+
+
+            <div class="row clearfix">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2><strong>Traffic</strong> Source</h2>
+                            <ul class="header-dropdown">
+                                <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
+                                    <ul class="dropdown-menu dropdown-menu-right slideUp">
+                                        <li><a href="javascript:void(0);"><p class="btn btn-warning btn-lg">Modifier </p></a></li>
+                                        <li><a href="javascript:void(0);">Delete</a></li>
+                                        <li><a href="javascript:void(0);">Report</a></li>
+                                    </ul>
+                                </li>
+                                <li class="remove">
+                                    <a role="button" class="boxs-close"><i class="zmdi zmdi-close"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <div class="row">
+
+
+
+
+
+
+    <h1>ErpContact Liste :: </h1>
+    <a href="{{ path('app_erp_contact_new') }}"><p class="btn btn-primary btn-lg">Creér Nouveau : </p> </a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Code</th>
+                <th>Nomsociete</th>
+                <th>Categorie</th>
+                <th>Adresseadminstratif</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Adresse</th>
+                <th>Tel</th>
+                <th>Tel2</th>
+                <th>Fax</th>
+                <th>Email</th>
+                <th>Website</th>
+                <th>Image</th>
+                <th>Creepar</th>
+                <th>Datecreation</th>
+                <th>Datemodification</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for erp_contact in erp_contacts %}
+            <tr>
+                <td>{{ erp_contact.id }}</td>
+                <td>{{ erp_contact.code }}</td>
+                <td>{{ erp_contact.nomsociete }}</td>
+                <td>{{ erp_contact.categorie }}</td>
+                <td>{{ erp_contact.adresseadminstratif }}</td>
+                <td>{{ erp_contact.nom }}</td>
+                <td>{{ erp_contact.prenom }}</td>
+                <td>{{ erp_contact.adresse }}</td>
+                <td>{{ erp_contact.tel }}</td>
+                <td>{{ erp_contact.tel2 }}</td>
+                <td>{{ erp_contact.fax }}</td>
+                <td>{{ erp_contact.email }}</td>
+                <td>{{ erp_contact.website }}</td>
+                <td>{{ erp_contact.image }}</td>
+                <td>{{ erp_contact.creepar }}</td>
+                <td>{{ erp_contact.datecreation ? erp_contact.datecreation|date('Y-m-d') : '' }}</td>
+                <td>{{ erp_contact.datemodification ? erp_contact.datemodification|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_erp_contact_show', {'id': erp_contact.id}) }}"><p class="btn btn-info btn-lg">Détails </p></a>
+                    <a href="{{ path('app_erp_contact_edit', {'id': erp_contact.id}) }}"><p class="btn btn-warning btn-lg">Modifier </p></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="18">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_erp_contact_new') }}"><p class="btn btn-primary btn-lg">Creér Nouveau : </p> </a>
+
+
+
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+{% endblock %}

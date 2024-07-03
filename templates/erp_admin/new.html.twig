@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ErpAdmin{% endblock %}
+
+{% block body %}
+
+
+<section class="content">
+
+<div class="container-fluid">
+
+
+
+
+
+
+
+
+
+    <h1>Créer nouveau ErpAdmin</h1>
+
+    {{ include('erp_admin/_form.html.twig') }}
+
+    <a href="{{ path('app_erp_admin_index') }}"class="btn btn-primary">Retour à la liste</a>
+
+
+
+
+
+
+
+
+
+
+
+</section>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

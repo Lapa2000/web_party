@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit LigneDevis{% endblock %}
+
+{% block body %}
+    <h1>Modifier LigneDevis</h1>
+
+    {{ include('ligne_devis/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_ligne_devis_index') }}"class="btn btn-primary">Retour à la liste</a>
+
+    {{ include('ligne_devis/_delete_form.html.twig') }}
+{% endblock %}

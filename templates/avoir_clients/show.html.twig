@@ -1,0 +1,121 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AvoirClients{% endblock %}
+
+{% block body %}
+
+
+
+
+
+<section class="content">
+
+<div class="container-fluid">
+
+
+
+
+
+
+
+
+
+
+
+    <h1>AvoirClients</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ avoir_client.id }}</td>
+            </tr>
+            <tr>
+                <th>Code</th>
+                <td>{{ avoir_client.code }}</td>
+            </tr>
+            <tr>
+                <th>Modepaimement</th>
+                <td>{{ avoir_client.modepaimement }}</td>
+            </tr>
+            <tr>
+                <th>Numerocompte</th>
+                <td>{{ avoir_client.numerocompte }}</td>
+            </tr>
+            <tr>
+                <th>Codeclient</th>
+                <td>{{ avoir_client.codeclient }}</td>
+            </tr>
+            <tr>
+                <th>Codefacture</th>
+                <td>{{ avoir_client.codefacture }}</td>
+            </tr>
+            <tr>
+                <th>Montanttotalfacture</th>
+                <td>{{ avoir_client.montanttotalfacture }}</td>
+            </tr>
+            <tr>
+                <th>Montantsaisie</th>
+                <td>{{ avoir_client.montantsaisie }}</td>
+            </tr>
+            <tr>
+                <th>Montantrestant</th>
+                <td>{{ avoir_client.montantrestant }}</td>
+            </tr>
+            <tr>
+                <th>Datemontant</th>
+                <td>{{ avoir_client.datemontant }}</td>
+            </tr>
+            <tr>
+                <th>Creepar</th>
+                <td>{{ avoir_client.creepar }}</td>
+            </tr>
+            <tr>
+                <th>Datecreation</th>
+                <td>{{ avoir_client.datecreation ? avoir_client.datecreation|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Datemodification</th>
+                <td>{{ avoir_client.datemodification ? avoir_client.datemodification|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_avoir_clients_index') }}"class="btn btn-primary">Retour à la liste</a>
+
+    <a href="{{ path('app_avoir_clients_edit', {'id': avoir_client.id}) }}"><p class="btn btn-warning btn-lg">Modifier </p></a>
+
+    {{ include('avoir_clients/_delete_form.html.twig') }}
+
+
+
+
+
+
+
+
+
+
+
+</section>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+

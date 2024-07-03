@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Formations{% endblock %}
+
+{% block body %}
+    <h1>Créer nouveau Formations</h1>
+
+    {{ include('formations/_form.html.twig') }}
+
+    <a href="{{ path('app_formations_index') }}"class="btn btn-primary">Retour à la liste</a>
+{% endblock %}

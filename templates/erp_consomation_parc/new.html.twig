@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ErpConsomationParc{% endblock %}
+
+{% block body %}
+
+
+<section class="content">
+
+<div class="container-fluid">
+
+
+
+
+
+
+
+
+
+    <h1>Créer nouveau ErpConsomationParc</h1>
+
+    {{ include('erp_consomation_parc/_form.html.twig') }}
+
+    <a href="{{ path('app_erp_consomation_parc_index') }}"class="btn btn-primary">Retour à la liste</a>
+
+
+
+
+
+
+
+
+
+
+
+</section>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

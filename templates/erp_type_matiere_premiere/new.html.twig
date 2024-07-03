@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ErpTypeMatierePremiere{% endblock %}
+
+{% block body %}
+    <h1>Créer nouveau ErpTypeMatierePremiere</h1>
+
+    {{ include('erp_type_matiere_premiere/_form.html.twig') }}
+
+    <a href="{{ path('app_erp_type_matiere_premiere_index') }}"class="btn btn-primary">Retour à la liste</a>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ErpPays index{% endblock %}
+
+{% block body %}
+
+
+<section class="content">
+
+<div class="container-fluid">
+
+
+
+
+
+
+
+
+    <h1>ErpPays Liste :: </h1>
+    <a href="{{ path('app_erp_pays_new') }}"><p class="btn btn-primary btn-lg">Creér Nouveau : </p> </a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Code</th>
+                <th>Nom</th>
+                <th>Creepar</th>
+                <th>Datecreation</th>
+                <th>Datemodification</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for erp_pay in erp_pays %}
+            <tr>
+                <td>{{ erp_pay.id }}</td>
+                <td>{{ erp_pay.code }}</td>
+                <td>{{ erp_pay.nom }}</td>
+                <td>{{ erp_pay.creepar }}</td>
+                <td>{{ erp_pay.datecreation ? erp_pay.datecreation|date('Y-m-d') : '' }}</td>
+                <td>{{ erp_pay.datemodification ? erp_pay.datemodification|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_erp_pays_show', {'id': erp_pay.id}) }}"><p class="btn btn-info btn-lg">Détails </p></a>
+                    <a href="{{ path('app_erp_pays_edit', {'id': erp_pay.id}) }}"><p class="btn btn-warning btn-lg">Modifier </p></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_erp_pays_new') }}"><p class="btn btn-primary btn-lg">Creér Nouveau : </p> </a>
+
+
+
+
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+{% endblock %}

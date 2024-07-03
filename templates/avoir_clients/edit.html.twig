@@ -1,0 +1,61 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit AvoirClients{% endblock %}
+
+{% block body %}
+
+
+
+
+<section class="content">
+
+<div class="container-fluid">
+
+
+
+
+
+
+
+
+
+
+
+    <h1>Modifier AvoirClients</h1>
+
+    {{ include('avoir_clients/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_avoir_clients_index') }}"class="btn btn-primary">Retour à la liste</a>
+
+    {{ include('avoir_clients/_delete_form.html.twig') }}
+
+
+
+
+
+
+
+
+
+
+
+</section>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
